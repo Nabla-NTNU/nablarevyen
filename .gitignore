@@ -12,7 +12,7 @@
 nablaweb/settings/local.py
 
 # Egen mappe for variabelt innhold (media, log, database etc.
-var/*
+var/
 
 # Virtualenv
 venv/

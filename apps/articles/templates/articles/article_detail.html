@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load cropping %}
+
+{% block title %}{{ article.title }} | Nablarevyen{% endblock %}
+
+{% block header %}
+{% include 'header.html' with active='articles' %}
+{% endblock %}
+
+{% block footer %}
+{% include 'footer.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container mt-2 mb-2 p-3 bg-white border">
+  <h1 class="display-4">{{ article.title }}</h1>
+  <small class="text-muted">Sist endret: {{ article.last_changed }}</small>
+  <hr>
+  {{ article.content|safe }}
+</div>
+<div class="container mt-2 mb-2 p-3 bg-white border">
+  <nav aria-label="breadcrumb mb-0">
+    <ol class="breadcrumb mb-0">
+      <li class="breadcrumb-item"><a href="{% url 'frontpage:index' %}">Forsiden</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'articles:list' %}">Nyheter</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{ article.title }}</li>
+    </ol>
+  </nav>
+</div>
+{% endblock %}

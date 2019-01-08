@@ -1,0 +1,57 @@
+.mw-100 {max-width: 100% !important;}
+.mw-80 {max-width: 80% !important;}
+.mw-75 {max-width: 75% !important;}
+.mw-60 {max-width: 60% !important;}
+.mw-50 {max-width: 50% !important;}
+.mw-40 {max-width: 40% !important;}
+.mw-33 {max-width: 33.33333% !important;}
+.mw-25 {max-width: 25% !important;}
+.mw-20 {max-width: 20% !important;}
+
+@media (min-width:576px) {
+    .mw-sm-100 {max-width: 100% !important;}
+    .mw-sm-80 {max-width: 80% !important;}
+    .mw-sm-75 {max-width: 75% !important;}
+    .mw-sm-60 {max-width: 60% !important;}
+    .mw-sm-50 {max-width: 50% !important;}
+    .mw-sm-40 {max-width: 40% !important;}
+    .mw-sm-33 {max-width: 33.33333% !important;}
+    .mw-sm-25 {max-width: 25% !important;}
+    .mw-sm-20 {max-width: 20% !important;}
+}
+
+@media (min-width:768px) {
+    .mw-md-100 {max-width: 100% !important;}
+    .mw-md-80 {max-width: 80% !important;}
+    .mw-md-75 {max-width: 75% !important;}
+    .mw-md-60 {max-width: 60% !important;}
+    .mw-md-50 {max-width: 50% !important;}
+    .mw-md-40 {max-width: 40% !important;}
+    .mw-md-33 {max-width: 33.33333% !important;}
+    .mw-md-25 {max-width: 25% !important;}
+    .mw-md-20 {max-width: 20% !important;}
+}
+
+@media (min-width:992px) {
+    .mw-lg-100 {max-width: 100% !important;}
+    .mw-lg-80 {max-width: 80% !important;}
+    .mw-lg-75 {max-width: 75% !important;}
+    .mw-lg-60 {max-width: 60% !important;}
+    .mw-lg-50 {max-width: 50% !important;}
+    .mw-lg-40 {max-width: 40% !important;}
+    .mw-lg-33 {max-width: 33.33333% !important;}
+    .mw-lg-25 {max-width: 25% !important;}
+    .mw-lg-20 {max-width: 20% !important;}
+}
+
+@media (min-width:1200px) {
+    .mw-xl-100 {max-width: 100% !important;}
+    .mw-xl-80 {max-width: 80% !important;}
+    .mw-xl-75 {max-width: 75% !important;}
+    .mw-xl-60 {max-width: 60% !important;}
+    .mw-xl-50 {max-width: 50% !important;}
+    .mw-xl-40 {max-width: 40% !important;}
+    .mw-xl-33 {max-width: 33.33333% !important;}
+    .mw-xl-25 {max-width: 25% !important;}
+    .mw-xl-20 {max-width: 20% !important;}
+}

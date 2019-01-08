@@ -1,0 +1,30 @@
+{% load cropping %}
+<div class="container pt-4 pb-4">
+  <h2>Siste nytt</h2>
+  <hr>
+  <div class="card-deck">
+    {% for article in article_list %}
+      <div class="card mw-100 mw-md-33 rounded-0 border-0{% if article.pinned %} pinned-article{% endif %}">
+        {% if article.pinned %}
+          <div class="pinned-article-icon"></div>
+          <i class="fas fa-thumbtack pinned-article-rotate-45"></i>
+        {% endif %}
+        <img class="card-img-top d-none d-md-block border" src="{% cropped_thumbnail article 'desktop_crop' %}" alt="Article image">
+        <img class="card-img-top d-block d-md-none border" src="{% cropped_thumbnail article 'mobile_crop' %}" alt="Article image">
+        <div class="card-body p-0 pt-2 pb-2">
+          <h4 class="card-title mb-0 text-left"><strong>{{ article.title }}</strong></h4>
+          <small class="text-muted text-left">{{ article.last_changed }}</small>
+          <p class="small mt-2 text-left">{{ article.summary }}</p>
+        </div>
+        <div class="card-footer  p-0 pt-2 pb-2 border-top-0 border-bottom-0 bg-white">
+          <a class="btn btn-block btn-primary nablarevyen-primary" href="{% url 'articles:detail' article.slug %}">Les mer</a>
+        </div>
+      </div>
+    {% empty %}
+      <p class="text-center w-100">Ingen artikler er blitt publisert.</p>
+    {% endfor %}
+  </div>
+  <div class="text-center mt-3">
+    <a class="btn btn-light" href="{% url 'articles:list' %}">Flere nyheter</a>
+  </div>
+</div>

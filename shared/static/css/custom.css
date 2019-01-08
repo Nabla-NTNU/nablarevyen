@@ -1,0 +1,42 @@
+.nablarevyen-primary {
+  background-color: #2700b2;
+  border-color: #2100a1;
+}
+.nablarevyen-primary:hover {
+  background-color: #4724c5;
+  border-color: #331896;
+}
+.carousel-shadow {
+  -webkit-box-shadow: inset 0px -1px 6px 4px rgba(33, 37, 41, 0.95);
+  -moz-box-shadow: inset 0px -1px 6px 4px rgba(33, 37, 41, 0.95);
+  box-shadow: inset 0px -1px 6px 4px rgba(33, 37, 41, 0.95);
+}
+.pinned-article {
+  position: relative;
+  background-color: transparent;
+}
+.pinned-article .pinned-article-icon {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border-top: 45px solid #0000001a;
+  border-left: 45px solid transparent;
+  width: 0;
+}
+.pinned-article i {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #515151;
+  text-shadow: 2px 0px #c6c6c6;
+}
+.pinned-article-rotate-45 {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.article-mw {
+  max-width: 18rem;
+}

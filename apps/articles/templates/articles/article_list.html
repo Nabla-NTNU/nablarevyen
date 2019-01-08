@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load cropping %}
+
+{% block title %}Nyheter | Nablarevyen{% endblock %}
+
+{% block header %}
+{% include 'header.html' with active='articles' %}
+{% endblock %}
+
+{% block footer %}
+{% include 'footer.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container mt-2 mb-2 p-3 bg-white border">
+  <h2>Nyheter</h2>
+  <hr class="m-0">
+  {% for article in article_list %}
+    {% if forloop.counter0|divisibleby:3 %}
+      <div class="card-deck text-center p-0 pt-2 p-sm-2">
+    {% endif %}
+    {% if article.published %}
+      <div class="card mw-100 mw-sm-33 rounded-0 border-0 p-0 p-sm-2 mr-0 ml-0 mb-1 mt-1">
+        <img class="card-img-top d-none d-md-block border" src="{% cropped_thumbnail article 'desktop_crop' %}" alt="Article image">
+        <img class="card-img-top d-block d-md-none border" src="{% cropped_thumbnail article 'mobile_crop' %}" alt="Article image">
+        <div class="card-body p-0 pt-2 pb-2 text-left">
+          <h4 class="card-title mb-0 text-left"><strong>{{ article.title }}</strong></h4>
+          <small class="text-muted text-left">{{ article.last_changed }}</small>
+          <p class="small mt-2 text-left">{{ article.summary }}</p>
+        </div>
+        <div class="card-footer  p-0 pt-2 pb-2 border-top-0 border-bottom-0 bg-white">
+          <a class="btn btn-block btn-primary nablarevyen-primary" href="{% url 'articles:detail' article.slug %}">Les mer</a>
+        </div>
+      </div>
+    {% endif %}
+    {% if forloop.counter|divisibleby:3 or forloop.last %}
+      </div>
+    {% endif %}
+  {% empty %}
+    <p class="text-center w-100">Ingen artikler er blitt publisert.</p>
+  {% endfor %}
+  {% if is_paginated %}
+    <nav>
+      <ul class="pagination mb-0">
+        {% if page_obj.has_previous %}
+          <li class="page-item">
+            <a class="page-link" href="{% url 'articles:list' %}?side={{ page_obj.previous_page_number }}">Forrige</a>
+          </li>
+        {% endif %}
+          <li class="page-item disabled">
+            <a class="page-link" href="#">{{ page_obj.number }} av {{ page_obj.paginator.num_pages }}</a>
+          </li>
+        {% if page_obj.has_next %}
+          <li class="page-item">
+            <a class="page-link" href="{% url 'articles:list' %}?side={{ page_obj.next_page_number }}">Neste</a>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
+  {% endif %}
+</div>
+<div class="container mt-2 mb-2 p-3 bg-white border">
+  <nav aria-label="breadcrumb mb-0">
+    <ol class="breadcrumb mb-0">
+      <li class="breadcrumb-item"><a href="{% url 'frontpage:index' %}">Forsiden</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Nyheter</li>
+    </ol>
+  </nav>
+</div>
+{% endblock %}

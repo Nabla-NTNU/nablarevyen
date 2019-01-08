@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Nablarevyen{% endblock %}
+
+{% block header %}
+{% include 'header.html' with active='frontpage' %}
+{% endblock %}
+
+{% block footer %}
+{% include 'footer.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="bg-dark">
+    {% include 'frontpage/carousel.html' %}
+</div>
+<div class="bg-white">
+    {% include 'frontpage/articles.html' %}
+</div>
+<div class="bg-dark">
+    {% include 'frontpage/instagram.html' %}
+</div>
+{% endblock %}

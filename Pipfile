@@ -12,8 +12,6 @@ django-instagram = "*"
 django-image-cropping = "*"
 easy-thumbnails = "*"
 django-ckeditor = "*"
-django-filer = "*"
-django-mptt = "*"
 django-polymorphic = "*"
 django-embed-video = "*"
 

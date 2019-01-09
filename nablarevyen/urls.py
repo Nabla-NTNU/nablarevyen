@@ -8,6 +8,7 @@ urlpatterns = [
     path('', include(('apps.frontpage.urls', 'frontpage'))),
     path('nyheter/', include(('apps.articles.urls', 'articles'))),
     path('om-oss/', include(('apps.about.urls', 'about'))),
+    path('arkiv/', include(('apps.archive.urls', 'archive'))),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('filer/', include('filer.urls')),
     path('admin/', admin.site.urls),

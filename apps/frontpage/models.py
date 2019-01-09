@@ -13,3 +13,7 @@ class CarouselItem(models.Model):
 
     def __str__(self):
         return '%s - %s' % (self.id, self.title)
+
+    class Meta:
+        verbose_name = 'Carousel item'
+        verbose_name_plural = 'Carousel items'

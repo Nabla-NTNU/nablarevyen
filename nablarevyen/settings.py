@@ -46,13 +46,13 @@ INSTALLED_APPS = [
     'django_instagram',
     'easy_thumbnails',
     'image_cropping',
-    'filer',
-    'mptt',
+    'embed_video',
     # Internal apps
     'apps.frontpage',
     'apps.articles',
     'apps.about',
     'apps.groups',
+    'apps.archive',
     # Django apps
     'django.contrib.admin',
     'django.contrib.auth',

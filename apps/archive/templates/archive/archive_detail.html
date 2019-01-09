@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load cropping %}
+{% load embed_video_tags %}
+
+{% block title %}{{ archive.name }} | Nablarevyen{% endblock %}
+
+{% block header %}
+{% include 'header.html' with active='archive' %}
+{% endblock %}
+
+{% block footer %}
+{% include 'footer.html' %}
+{% endblock %}
+
+{% block stylesheet %}
+<style>
+.archive-images {
+  list-style: none;
+}
+.archive-images > li:hover {
+  cursor: -moz-zoom-in;
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
+}
+</style>
+{% endblock %}
+
+{% block javascript %}
+<script type="text/javascript">
+  const gallery = new Viewer(document.getElementById('archive-gallery'), {
+    url: 'data-original',
+  });
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-2 mb-2 p-3 bg-white border">
+  <h2>{{ archive.name }}</h2>
+  <hr>
+  <div id="archive-gallery">
+    <ul class="row p-0 m-0 archive-images" style="list-style: none;">
+      {% for image in archive.image_set.all %}
+        <li class="col-6 col-sm-4 col-md-2 p-0 m-0 border border-white">
+          <img class="img-fluid" data-original="{{ image.image.url }}" src="{% cropped_thumbnail image 'image_crop' %}" alt="{{ image.alt }}">
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <hr class="m-0 mt-3 mb-3">
+  <div class="row p-0 m-0">
+  {% for video in archive.video_set.all %}
+    {% video video.link as my_video %}
+    <div class="col-12 col-sm-6 col-md-4 p-1">
+      {% video my_video '100% x 250px' %}
+    </div>
+    {% endvideo %}
+  {% endfor %}
+  </div>
+</div>
+<div class="container mt-2 mb-2 p-3 bg-white border">
+  <nav aria-label="breadcrumb mb-0">
+    <ol class="breadcrumb mb-0">
+      <li class="breadcrumb-item"><a href="{% url 'frontpage:index' %}">Forsiden</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'archive:list' %}">Arkiv</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{ archive.name }}</li>
+    </ol>
+  </nav>
+</div>
+{% endblock %}

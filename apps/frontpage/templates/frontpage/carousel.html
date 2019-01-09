@@ -8,10 +8,15 @@
   <div class="carousel-inner">
     {% for carousel_item in carousel_list %}
     <div class="carousel-item{% if forloop.first %} active{% endif %}">
-      <a href="{% if carousel_item.link %}{{ carousel_item.link }}{% else %}#{% endif %}">
+      {% if carousel_item.link %}
+      <a href="{{ carousel_item.link }}">
         <img class="d-block d-md-none w-100" src="{% cropped_thumbnail carousel_item 'mobile_crop' %}" alt="{{ carousel_item.title }}">
         <img class="d-none d-md-block w-100" src="{% cropped_thumbnail carousel_item 'desktop_crop' %}" alt="{{ carousel_item.title }}">
       </a>
+      {% else %}
+      <img class="d-block d-md-none w-100" src="{% cropped_thumbnail carousel_item 'mobile_crop' %}" alt="{{ carousel_item.title }}">
+      <img class="d-none d-md-block w-100" src="{% cropped_thumbnail carousel_item 'desktop_crop' %}" alt="{{ carousel_item.title }}">
+      {% endif %}
     </div>
     {% endfor %}
   </div>

@@ -15,6 +15,7 @@ django-ckeditor = "*"
 django-filer = "*"
 django-mptt = "*"
 django-polymorphic = "*"
+django-embed-video = "*"
 
 [requires]
 python_version = "3.6"

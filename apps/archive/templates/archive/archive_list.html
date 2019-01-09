@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load cropping %}
+
+{% block title %}Arkiv | Nablarevyen{% endblock %}
+
+{% block header %}
+{% include 'header.html' with active='archive' %}
+{% endblock %}
+
+{% block footer %}
+{% include 'footer.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container mt-2 mb-2 p-3 bg-white border">
+  <h2>Arkiv</h2>
+  <hr class="m-0 mb-3">
+  <div class="row">
+  {% for archive in archive_list %}
+    {% if archive.published %}
+      <div class="col-6 col-md-3 mb-4">
+        <a class="text-dark" href="{% url 'archive:detail' archive.slug %}">
+        <img class="card-img-top border border-secondary rounded-0" src="{% cropped_thumbnail archive 'thumbnail_image_crop' %}" alt="Archive thumbnail">
+        <div class="p-0 pt-2 pb-2">
+          <h5 class="mb-0 text-center"><strong>{{ archive.name }}</strong></h5>
+        </div>
+        </a>
+      </div>
+    {% endif %}
+  {% empty %}
+    <p class="text-center w-100">Ingen arkiv er blitt publisert.</p>
+  {% endfor %}
+  </div>
+  {% if is_paginated %}
+    <nav>
+      <ul class="pagination mb-0">
+        {% if page_obj.has_previous %}
+          <li class="page-item">
+            <a class="page-link" href="{% url 'archive:list' %}?side={{ page_obj.previous_page_number }}">Forrige</a>
+          </li>
+        {% endif %}
+          <li class="page-item disabled">
+            <a class="page-link" href="#">{{ page_obj.number }} av {{ page_obj.paginator.num_pages }}</a>
+          </li>
+        {% if page_obj.has_next %}
+          <li class="page-item">
+            <a class="page-link" href="{% url 'archive:list' %}?side={{ page_obj.next_page_number }}">Neste</a>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
+  {% endif %}
+</div>
+<div class="container mt-2 mb-2 p-3 bg-white border">
+  <nav aria-label="breadcrumb mb-0">
+    <ol class="breadcrumb mb-0">
+      <li class="breadcrumb-item"><a href="{% url 'frontpage:index' %}">Forsiden</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Arkiv</li>
+    </ol>
+  </nav>
+</div>
+{% endblock %}

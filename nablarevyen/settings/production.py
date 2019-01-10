@@ -11,7 +11,11 @@ DEBUG = bool(env.get('DEBUG', False))
 ALLOWED_HOSTS = ['revy.nabla.no']
 
 ADMINS = (
+<<<<<<< HEAD
     ('WebSjef', 'websjef@nabla.ntnu.no')
+=======
+    # TODO: add admin
+>>>>>>> 0e9eb5eb9bd556e8900a7dc55cca53f13a389342
 )
 
 MANAGERS = ADMINS

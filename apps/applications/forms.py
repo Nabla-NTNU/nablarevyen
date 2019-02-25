@@ -8,18 +8,14 @@ from . models import Position, Application
 
 class ApplicationForm(ModelForm):
 
-    positionQueryset = Position.objects.filter(published=True, deadline__gte=timezone.now(), open__lte=timezone.now()).order_by('deadline')
-    position = ModelChoiceField(queryset=positionQueryset, label="Opptak")
-
-    groupsQueryset = Group.objects.filter(published=True)
-    first_group = ModelChoiceField(queryset=groupsQueryset, label="Førstevalg")
-    second_group = ModelChoiceField(queryset=groupsQueryset, label="Andrevalg")
-    third_group = ModelChoiceField(queryset=groupsQueryset, label="Tredjevalg")
-
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for visible in self.visible_fields():
             visible.field.widget.attrs['class'] = 'form-control'
+        self.fields['position'].queryset = Position.objects.filter(published=True, deadline__gte=timezone.now(), open__lte=timezone.now()).order_by('deadline')
+        self.fields['first_group'].queryset = Group.objects.filter(published=True)
+        self.fields['second_group'].queryset = Group.objects.filter(published=True)
+        self.fields['third_group'].queryset = Group.objects.filter(published=True)
         self.fields['name'].widget.attrs.update({'placeholder': 'Navn'})
         self.fields['email'].widget.attrs.update({'placeholder': 'Epostadresse'})
         self.fields['phone'].widget.attrs.update({'placeholder': 'Telefon'})

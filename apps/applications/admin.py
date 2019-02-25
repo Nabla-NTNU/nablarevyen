@@ -8,6 +8,7 @@ class PositionAdmin(admin.ModelAdmin):
 
 class ApplicationAdmin(admin.ModelAdmin):
     list_display = ('id', 'position', 'name',)
+    list_filter = ('position',)
 
 
 admin.site.register(Position, PositionAdmin)

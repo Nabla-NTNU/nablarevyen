@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'apps.about',
     'apps.groups',
     'apps.archive',
+    'apps.applications',
     # Django apps
     'django.contrib.admin',
     'django.contrib.auth',

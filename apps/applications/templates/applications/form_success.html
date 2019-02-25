@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Opptak | Nablarevyen{% endblock %}
+
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
+
+{% block footer %}
+{% include 'footer.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container mt-2 mb-2 p-3 bg-white border">
+  {% include 'groups/groups.html' %}
+</div>
+<div class="container mt-2 mb-2 p-3 bg-white border">
+  <h2 class="text-center">Opptak</h2>
+  <hr class="m-0 mb-3">
+  <p class="text-center">Din søknad er registrert.</p>
+</div>
+<div class="container mt-2 mb-2 p-3 bg-white border">
+  <nav aria-label="breadcrumb mb-0">
+    <ol class="breadcrumb mb-0">
+      <li class="breadcrumb-item"><a href="{% url 'frontpage:index' %}">Forsiden</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'applications:index' %}">Opptak</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Suksess</li>
+    </ol>
+  </nav>
+</div>
+{% endblock %}

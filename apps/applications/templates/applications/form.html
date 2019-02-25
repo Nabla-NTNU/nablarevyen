@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}Opptak | Nablarevyen{% endblock %}
+
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
+
+{% block footer %}
+{% include 'footer.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container mt-2 mb-2 p-3 bg-white border">
+  {% include 'groups/groups.html' %}
+</div>
+<div class="container mt-2 mb-2 p-3 bg-white border">
+  <h2 class="text-center">Opptak</h2>
+  <hr class="m-0 mb-3">
+  {% if open_positions %}
+    <div class="text-center">
+      <button type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#applicationModal">Gå til søknadsskjema</button>
+    </div>
+    {% include 'applications/modal.html' %}
+  {% else %}
+    <p class="text-center w-100">Det er for tiden ingen åpne opptak.</p>
+  {% endif %}
+</div>
+<div class="container mt-2 mb-2 p-3 bg-white border">
+  <nav aria-label="breadcrumb mb-0">
+    <ol class="breadcrumb mb-0">
+      <li class="breadcrumb-item"><a href="{% url 'frontpage:index' %}">Forsiden</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Opptak</li>
+    </ol>
+  </nav>
+</div>
+{% endblock %}
+
+{% block javascript %}
+<script>
+  (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      var forms = document.getElementsByClassName('needs-validation');
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+  {% if form.errors %}
+    $(window).on('load',function(){
+      $('#applicationModal').modal('show');
+    });
+  {% endif %}
+</script>
+{% endblock %}

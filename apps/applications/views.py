@@ -20,12 +20,6 @@ class ApplicationView(CreateView):
         context = super().get_context_data(**kwargs)
         group_list = Group.objects.filter(published=True)
         open_positions = Position.objects.filter(published=True, deadline__gte=timezone.now(), open__lte=timezone.now()).count()
-        test = Position.objects.filter(
-            published=True,
-            deadline__gte=timezone.now(),
-            open__lte=timezone.now()
-        ).order_by('deadline')
-        context['test'] = test
         context['group_list'] = group_list
         context['open_positions'] = open_positions
         return context

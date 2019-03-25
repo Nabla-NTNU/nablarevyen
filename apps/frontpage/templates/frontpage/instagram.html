@@ -1,7 +1,7 @@
 {% load instagram_client %}
 {% load frontpage_extras %}
 {% load cache %}
-{% cache 600 instagramcache %}
+{% cache 3600 instagramcache %}
   <div class="d-block d-md-none">
     <div class="card-group border-0 rounded-0">
       {% instagram_user_recent_media nablarevyen %}

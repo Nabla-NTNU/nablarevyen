@@ -26,9 +26,11 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             {% archive_menu as archive_list %}
             {% for archive in archive_list %}
-            <a class="dropdown-item" href="{% url 'archive:detail' archive.slug %}">{{ archive.name }}</a>
+              <a class="dropdown-item" href="{% url 'archive:detail' archive.slug %}">{{ archive.name }}</a>
+              {% if forloop.last %}
+                <div class="dropdown-divider"></div>
+              {% endif %}
             {% endfor %}
-            <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{% url 'archive:list' %}">Se mer...</a>
           </div>
         </li>

@@ -44,7 +44,7 @@
           <img class="img-fluid" data-original="{{ image.image.url }}" src="{% cropped_thumbnail image 'image_crop' %}" alt="{{ image.alt }}">
         </li>
       {% empty %}
-      <p class="text-muted"><em>Ingen bilder er publisert</em></p>
+        <p class="text-muted mx-auto mb-0"><em>Ingen bilder er publisert</em></p>
       {% endfor %}
     </ul>
   </div>
@@ -57,7 +57,7 @@
       </div>
     {% endvideo %}
   {% empty %}
-  <p class="text-muted"><em>Ingen videoer er publisert</em></p>
+    <p class="text-muted mx-auto mb-0"><em>Ingen videoer er publisert</em></p>
   {% endfor %}
   </div>
 </div>

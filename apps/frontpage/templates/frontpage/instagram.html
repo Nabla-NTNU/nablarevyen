@@ -1,44 +1,47 @@
 {% load instagram_client %}
 {% load frontpage_extras %}
-<div class="d-block d-md-none">
-  <div class="card-group border-0 rounded-0">
-    {% instagram_user_recent_media nablarevyen %}
-    {% for media in recent_media|slice:":3" %}
-      <div class="card mb-0 border-0 rounded-0">
-        <a href="https://instagram.com/p/{{ media.shortcode }}" target="_blank">
-          <img class="card-img-top" src="{{ media.thumbnail_src }}" alt="Instagram bilde">
-        </a>
-      </div>
-    {% endfor %}
+{% load cache %}
+{% cache 600 instagramcache %}
+  <div class="d-block d-md-none">
+    <div class="card-group border-0 rounded-0">
+      {% instagram_user_recent_media nablarevyen %}
+      {% for media in recent_media|slice:":3" %}
+        <div class="card mb-0 border-0 rounded-0">
+          <a href="https://instagram.com/p/{{ media.shortcode }}" target="_blank">
+            <img class="card-img-top" src="{{ media.thumbnail_src }}" alt="Instagram bilde">
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="card-group border-0 rounded-0">
+      {% for media in recent_media|slice:"3:6" %}
+        <div class="card mb-0 border-0 rounded-0">
+          <a href="https://instagram.com/p/{{ media.shortcode }}" target="_blank">
+            <img class="card-img-top" src="{{ media.thumbnail_src }}" alt="Instagram bilde">
+          </a>
+        </div>
+      {% endfor %}
+    </div>
   </div>
-  <div class="card-group border-0 rounded-0">
-    {% for media in recent_media|slice:"3:6" %}
-      <div class="card mb-0 border-0 rounded-0">
-        <a href="https://instagram.com/p/{{ media.shortcode }}" target="_blank">
-          <img class="card-img-top" src="{{ media.thumbnail_src }}" alt="Instagram bilde">
-        </a>
-      </div>
-    {% endfor %}
+  <div class="d-none d-md-block">
+    <div class="card-group border-0 rounded-0">
+      {% instagram_user_recent_media nablarevyen %}
+      {% for media in recent_media|slice:":6" %}
+        <div class="card border-0 rounded-0">
+          <a href="https://instagram.com/p/{{ media.shortcode }}" target="_blank">
+            <img class="card-img-top" src="{{ media.thumbnail_src }}" alt="Instagram bilde">
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="card-group border-0 rounded-0">
+      {% for media in recent_media|slice:"6:12" %}
+        <div class="card border-0 rounded-0">
+          <a href="https://instagram.com/p/{{ media.shortcode }}" target="_blank">
+            <img class="card-img-top" src="{{ media.thumbnail_src }}" alt="Instagram bilde">
+          </a>
+        </div>
+      {% endfor %}
+    </div>
   </div>
-</div>
-<div class="d-none d-md-block">
-  <div class="card-group border-0 rounded-0">
-    {% instagram_user_recent_media nablarevyen %}
-    {% for media in recent_media|slice:":6" %}
-      <div class="card border-0 rounded-0">
-        <a href="https://instagram.com/p/{{ media.shortcode }}" target="_blank">
-          <img class="card-img-top" src="{{ media.thumbnail_src }}" alt="Instagram bilde">
-        </a>
-      </div>
-    {% endfor %}
-  </div>
-  <div class="card-group border-0 rounded-0">
-    {% for media in recent_media|slice:"6:12" %}
-      <div class="card border-0 rounded-0">
-        <a href="https://instagram.com/p/{{ media.shortcode }}" target="_blank">
-          <img class="card-img-top" src="{{ media.thumbnail_src }}" alt="Instagram bilde">
-        </a>
-      </div>
-    {% endfor %}
-  </div>
-</div>
+{% endcache %}

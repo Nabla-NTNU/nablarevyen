@@ -3,7 +3,7 @@ from . models import Archive
 
 class ArchiveList(ListView):
     model = Archive
-    queryset = Archive.objects.filter(published=True).order_by('name')
+    queryset = Archive.objects.filter(published=True).order_by('name').reverse()
     paginate_by = 12
     page_kwarg = 'side'
 

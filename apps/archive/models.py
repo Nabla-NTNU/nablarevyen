@@ -10,7 +10,7 @@ class Archive(models.Model):
     display_in_menu = models.BooleanField(help_text="Set this to display in the archive menu. Otherwise found under \"Read more\"")
     published = models.BooleanField(help_text="Set this to publish the entire archive")
     keywords = models.CharField(max_length=200)
-    description = models.TextField(max_length=200, help_text="Short description of the archive, 200 symbols.")
+    description = models.TextField(max_length=2000, help_text="Short description of the archive, 2000 symbols.")
     thumbnail_image = models.ImageField(upload_to='archive/archive/', help_text="To crop the image, simply click save and continue.")
     thumbnail_image_crop = ImageRatioField('thumbnail_image', '400x400', size_warning=True)
 

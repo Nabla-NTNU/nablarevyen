@@ -30,6 +30,8 @@ DEBUG = True
 
 APPEND_SLASH = True
 
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
@@ -37,7 +39,6 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 SECURE_CONTENT_TYPE_NOSNIFF = True
 
 SECURE_BROWSER_XSS_FILTER = True
-
 
 # Application definition
 

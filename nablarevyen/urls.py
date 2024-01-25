@@ -5,13 +5,14 @@ from django.urls import path, include
 
 
 urlpatterns = [
-    path('', include(('apps.frontpage.urls', 'frontpage'))),
-    path('nyheter/', include(('apps.articles.urls', 'articles'))),
-    path('om-oss/', include(('apps.about.urls', 'about'))),
-    path('arkiv/', include(('apps.archive.urls', 'archive'))),
-    path('opptak/', include(('apps.applications.urls', 'applications'))),
-    path('ckeditor/', include('ckeditor_uploader.urls')),
-    path('admin/', admin.site.urls),
+    path("", include(("apps.frontpage.urls", "frontpage"))),
+    path("nyheter/", include(("apps.articles.urls", "articles"))),
+    path("om-oss/", include(("apps.about.urls", "about"))),
+    path("arkiv/", include(("apps.archive.urls", "archive"))),
+    path("opptak/", include(("apps.applications.urls", "applications"))),
+    path("ckeditor/", include("ckeditor_uploader.urls")),
+    path("admin/", admin.site.urls),
+    path("bounce/", include("apps.bounce.urls")),
 ]
 
 if settings.DEBUG:

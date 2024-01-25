@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'apps.groups',
     'apps.archive',
     'apps.applications',
+    'apps.bounce',
     # Django apps
     'django.contrib.admin',
     'django.contrib.auth',

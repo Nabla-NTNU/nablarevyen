@@ -6,7 +6,7 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-django = "*"
+django = "==3.2.*"
 pillow = "*"
 django-instagram = "*"
 django-image-cropping = "*"
@@ -14,6 +14,13 @@ easy-thumbnails = "*"
 django-ckeditor = "*"
 django-polymorphic = "*"
 django-embed-video = "*"
+gunicorn = "*"
+pymysql = "*"
+sorl-thumbnail = "==12.10.0"
 
 [requires]
-python_version = "3.6"
+python_version = "3.9.0"
+
+[scripts]
+production = "gunicorn --config /etc/websites/nablarevyen/gunicorn.conf nablarevy
+en.wsgi:application"

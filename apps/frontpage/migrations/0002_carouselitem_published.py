@@ -6,13 +6,15 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('frontpage', '0001_initial'),
+        ("frontpage", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='carouselitem',
-            name='published',
-            field=models.BooleanField(default=False, help_text='Set this to publish carousel item.'),
+            model_name="carouselitem",
+            name="published",
+            field=models.BooleanField(
+                default=False, help_text="Set this to publish carousel item."
+            ),
         ),
     ]

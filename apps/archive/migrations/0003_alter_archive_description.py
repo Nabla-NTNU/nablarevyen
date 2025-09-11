@@ -6,13 +6,16 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('archive', '0002_auto_20190109_1135'),
+        ("archive", "0002_auto_20190109_1135"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='archive',
-            name='description',
-            field=models.TextField(help_text='Short description of the archive, 2000 symbols.', max_length=2000),
+            model_name="archive",
+            name="description",
+            field=models.TextField(
+                help_text="Short description of the archive, 2000 symbols.",
+                max_length=2000,
+            ),
         ),
     ]

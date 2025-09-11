@@ -9,50 +9,94 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('groups', '0002_auto_20190109_1135'),
+        ("groups", "0002_auto_20190109_1135"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Application',
+            name="Application",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=200)),
-                ('email', models.EmailField(max_length=254)),
-                ('text', models.TextField()),
-                ('first_group', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='applications_first', to='groups.Group')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=200)),
+                ("email", models.EmailField(max_length=254)),
+                ("text", models.TextField()),
+                (
+                    "first_group",
+                    models.ForeignKey(
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        related_name="applications_first",
+                        to="groups.Group",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Application',
-                'verbose_name_plural': 'Applications',
+                "verbose_name": "Application",
+                "verbose_name_plural": "Applications",
             },
         ),
         migrations.CreateModel(
-            name='Position',
+            name="Position",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=200)),
-                ('published', models.BooleanField(default=False, help_text='Set this to publish position item.')),
-                ('deadline', models.DateTimeField()),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=200)),
+                (
+                    "published",
+                    models.BooleanField(
+                        default=False, help_text="Set this to publish position item."
+                    ),
+                ),
+                ("deadline", models.DateTimeField()),
             ],
             options={
-                'verbose_name': 'Position',
-                'verbose_name_plural': 'Positions',
+                "verbose_name": "Position",
+                "verbose_name_plural": "Positions",
             },
         ),
         migrations.AddField(
-            model_name='application',
-            name='position',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='applications.Position'),
+            model_name="application",
+            name="position",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, to="applications.Position"
+            ),
         ),
         migrations.AddField(
-            model_name='application',
-            name='second_group',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='applications_second', to='groups.Group'),
+            model_name="application",
+            name="second_group",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                related_name="applications_second",
+                to="groups.Group",
+            ),
         ),
         migrations.AddField(
-            model_name='application',
-            name='third_group',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='applications_third', to='groups.Group'),
+            model_name="application",
+            name="third_group",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                related_name="applications_third",
+                to="groups.Group",
+            ),
         ),
     ]

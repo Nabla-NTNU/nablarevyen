@@ -23,18 +23,18 @@ VARIABLE_CONTENT = os.environ.get("VARIABLE_CONTENT", os.path.join(BASE_DIR, "va
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ai7z9^b14!l8z^4r9x+v#=$cgv=2hqx1n9w^_^wkne+n7(5(@p'
+SECRET_KEY = "ai7z9^b14!l8z^4r9x+v#=$cgv=2hqx1n9w^_^wkne+n7(5(@p"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 APPEND_SLASH = True
 
-DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
-X_FRAME_OPTIONS = 'SAMEORIGIN'
+X_FRAME_OPTIONS = "SAMEORIGIN"
 
 SECURE_CONTENT_TYPE_NOSNIFF = True
 
@@ -44,68 +44,70 @@ SECURE_BROWSER_XSS_FILTER = True
 
 INSTALLED_APPS = [
     # External apps
-    'ckeditor',
-    'ckeditor_uploader',
-    'sorl.thumbnail',
-    'django_instagram',
-    'easy_thumbnails',
-    'image_cropping',
-    'embed_video',
+    "ckeditor",
+    "ckeditor_uploader",
+    "sorl.thumbnail",
+    "django_instagram",
+    "easy_thumbnails",
+    "image_cropping",
+    "embed_video",
     # Internal apps
-    'apps.frontpage',
-    'apps.articles',
-    'apps.about',
-    'apps.groups',
-    'apps.archive',
-    'apps.applications',
-    'apps.bounce',
+    "apps.frontpage",
+    "apps.articles",
+    "apps.about",
+    "apps.groups",
+    "apps.archive",
+    "apps.applications",
+    "apps.bounce",
     # Django apps
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = 'nablarevyen.urls'
+ROOT_URLCONF = "nablarevyen.urls"
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'shared/templates'),],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [
+            os.path.join(BASE_DIR, "shared/templates"),
+        ],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
             ],
         },
     },
 ]
 
-WSGI_APPLICATION = 'nablarevyen.wsgi.application'
+WSGI_APPLICATION = "nablarevyen.wsgi.application"
 
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'var/db.sqlite3'),
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "var/db.sqlite3"),
     }
 }
 
@@ -114,19 +116,27 @@ DATABASES = {
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',},
-    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',},
-    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',},
-    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',},
+    {
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+    },
 ]
 
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'nb'
+LANGUAGE_CODE = "nb"
 
-TIME_ZONE = 'Europe/Oslo'
+TIME_ZONE = "Europe/Oslo"
 
 USE_I18N = True
 
@@ -138,39 +148,39 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = "/static/"
 
-STATIC_ROOT = os.path.join(VARIABLE_CONTENT, 'static_collected')
+STATIC_ROOT = os.path.join(VARIABLE_CONTENT, "static_collected")
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'shared/static'),
+    os.path.join(BASE_DIR, "shared/static"),
 ]
 
 
 # Media files (MEDIA_ROOT is applied in the state settings file)
 # https://docs.djangoproject.com/en/2.0/topics/files/
 
-MEDIA_URL = '/media/'
+MEDIA_URL = "/media/"
 
-MEDIA_ROOT = os.path.join(VARIABLE_CONTENT, 'media')
+MEDIA_ROOT = os.path.join(VARIABLE_CONTENT, "media")
 
 
 # django-ckeditor
 # https://github.com/django-ckeditor/django-ckeditor#usage
 
-CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_UPLOAD_PATH = "uploads/"
 
 CKEDITOR_BROWSE_SHOW_DIRS = True
 
-CKEDITOR_IMAGE_BACKEND = 'pillow'
+CKEDITOR_IMAGE_BACKEND = "pillow"
 
 
 # Email backend
 # https://docs.djangoproject.com/en/2.0/topics/email/
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
-DEFAULT_FROM_EMAIL = 'dont-reply@localhost'
+DEFAULT_FROM_EMAIL = "dont-reply@localhost"
 
 
 # django-image-cropping settings
@@ -178,7 +188,7 @@ DEFAULT_FROM_EMAIL = 'dont-reply@localhost'
 
 
 THUMBNAIL_PROCESSORS = (
-    'image_cropping.thumbnail_processors.crop_corners',
+    "image_cropping.thumbnail_processors.crop_corners",
 ) + thumbnail_settings.THUMBNAIL_PROCESSORS
 
 THUMBNAIL_HIGH_RESOLUTION = True

@@ -7,13 +7,23 @@ import image_cropping.fields
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('frontpage', '0003_auto_20190108_1919'),
+        ("frontpage", "0003_auto_20190108_1919"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='carouselitem',
-            name='desktop_crop',
-            field=image_cropping.fields.ImageRatioField('image', '2000x600', adapt_rotation=False, allow_fullsize=False, free_crop=False, help_text=None, hide_image_field=False, size_warning=True, verbose_name='desktop crop'),
+            model_name="carouselitem",
+            name="desktop_crop",
+            field=image_cropping.fields.ImageRatioField(
+                "image",
+                "2000x600",
+                adapt_rotation=False,
+                allow_fullsize=False,
+                free_crop=False,
+                help_text=None,
+                hide_image_field=False,
+                size_warning=True,
+                verbose_name="desktop crop",
+            ),
         ),
     ]

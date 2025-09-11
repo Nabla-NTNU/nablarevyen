@@ -7,18 +7,38 @@ import image_cropping.fields
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('archive', '0001_initial'),
+        ("archive", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='archive',
-            name='thumbnail_image_crop',
-            field=image_cropping.fields.ImageRatioField('thumbnail_image', '400x400', adapt_rotation=False, allow_fullsize=False, free_crop=False, help_text=None, hide_image_field=False, size_warning=True, verbose_name='thumbnail image crop'),
+            model_name="archive",
+            name="thumbnail_image_crop",
+            field=image_cropping.fields.ImageRatioField(
+                "thumbnail_image",
+                "400x400",
+                adapt_rotation=False,
+                allow_fullsize=False,
+                free_crop=False,
+                help_text=None,
+                hide_image_field=False,
+                size_warning=True,
+                verbose_name="thumbnail image crop",
+            ),
         ),
         migrations.AlterField(
-            model_name='image',
-            name='image_crop',
-            field=image_cropping.fields.ImageRatioField('image', '400x400', adapt_rotation=False, allow_fullsize=False, free_crop=False, help_text=None, hide_image_field=False, size_warning=True, verbose_name='image crop'),
+            model_name="image",
+            name="image_crop",
+            field=image_cropping.fields.ImageRatioField(
+                "image",
+                "400x400",
+                adapt_rotation=False,
+                allow_fullsize=False,
+                free_crop=False,
+                help_text=None,
+                hide_image_field=False,
+                size_warning=True,
+                verbose_name="image crop",
+            ),
         ),
     ]

@@ -7,30 +7,35 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('articles', '0002_auto_20181215_1931'),
+        ("articles", "0002_auto_20181215_1931"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='article',
-            name='created',
-            field=models.DateTimeField(auto_now_add=True, default=django.utils.timezone.now),
+            model_name="article",
+            name="created",
+            field=models.DateTimeField(
+                auto_now_add=True, default=django.utils.timezone.now
+            ),
             preserve_default=False,
         ),
         migrations.AddField(
-            model_name='article',
-            name='last_changed',
+            model_name="article",
+            name="last_changed",
             field=models.DateTimeField(auto_now=True),
         ),
         migrations.AddField(
-            model_name='article',
-            name='pinned',
-            field=models.BooleanField(default=False, help_text='Pin this article to the frontpage.<br/>Multiple pinned articles are sorted by date.'),
+            model_name="article",
+            name="pinned",
+            field=models.BooleanField(
+                default=False,
+                help_text="Pin this article to the frontpage.<br/>Multiple pinned articles are sorted by date.",
+            ),
             preserve_default=False,
         ),
         migrations.AddField(
-            model_name='article',
-            name='published',
+            model_name="article",
+            name="published",
             field=models.BooleanField(default=False),
             preserve_default=False,
         ),

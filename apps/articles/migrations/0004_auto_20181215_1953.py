@@ -6,19 +6,24 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('articles', '0003_auto_20181215_1950'),
+        ("articles", "0003_auto_20181215_1950"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='article',
-            name='deny_frontpage',
-            field=models.BooleanField(default=False, help_text='Set this to deny this article to be displayed on the frontpage.'),
+            model_name="article",
+            name="deny_frontpage",
+            field=models.BooleanField(
+                default=False,
+                help_text="Set this to deny this article to be displayed on the frontpage.",
+            ),
             preserve_default=False,
         ),
         migrations.AlterField(
-            model_name='article',
-            name='published',
-            field=models.BooleanField(help_text='Set this when article is ready to be published.'),
+            model_name="article",
+            name="published",
+            field=models.BooleanField(
+                help_text="Set this when article is ready to be published."
+            ),
         ),
     ]

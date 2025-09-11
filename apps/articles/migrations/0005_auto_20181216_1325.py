@@ -7,23 +7,45 @@ import image_cropping.fields
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('articles', '0004_auto_20181215_1953'),
+        ("articles", "0004_auto_20181215_1953"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='article',
-            name='desktop_crop',
-            field=image_cropping.fields.ImageRatioField('image', '600x300', adapt_rotation=False, allow_fullsize=False, free_crop=False, help_text=None, hide_image_field=False, size_warning=True, verbose_name='desktop crop'),
+            model_name="article",
+            name="desktop_crop",
+            field=image_cropping.fields.ImageRatioField(
+                "image",
+                "600x300",
+                adapt_rotation=False,
+                allow_fullsize=False,
+                free_crop=False,
+                help_text=None,
+                hide_image_field=False,
+                size_warning=True,
+                verbose_name="desktop crop",
+            ),
         ),
         migrations.AlterField(
-            model_name='article',
-            name='mobile_crop',
-            field=image_cropping.fields.ImageRatioField('image', '600x400', adapt_rotation=False, allow_fullsize=False, free_crop=False, help_text=None, hide_image_field=False, size_warning=True, verbose_name='mobile crop'),
+            model_name="article",
+            name="mobile_crop",
+            field=image_cropping.fields.ImageRatioField(
+                "image",
+                "600x400",
+                adapt_rotation=False,
+                allow_fullsize=False,
+                free_crop=False,
+                help_text=None,
+                hide_image_field=False,
+                size_warning=True,
+                verbose_name="mobile crop",
+            ),
         ),
         migrations.AlterField(
-            model_name='article',
-            name='summary',
-            field=models.TextField(help_text='Short summary on maximum of 200 words.', max_length=200),
+            model_name="article",
+            name="summary",
+            field=models.TextField(
+                help_text="Short summary on maximum of 200 words.", max_length=200
+            ),
         ),
     ]

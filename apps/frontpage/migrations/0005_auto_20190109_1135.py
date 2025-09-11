@@ -6,12 +6,15 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('frontpage', '0004_auto_20190108_1920'),
+        ("frontpage", "0004_auto_20190108_1920"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='carouselitem',
-            options={'verbose_name': 'Carousel item', 'verbose_name_plural': 'Carousel items'},
+            name="carouselitem",
+            options={
+                "verbose_name": "Carousel item",
+                "verbose_name_plural": "Carousel items",
+            },
         ),
     ]

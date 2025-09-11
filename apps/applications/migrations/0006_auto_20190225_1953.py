@@ -7,23 +7,47 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('applications', '0005_auto_20190225_1945'),
+        ("applications", "0005_auto_20190225_1945"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='application',
-            name='first_group',
-            field=models.ForeignKey(blank=True, default='', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='applications_first', to='groups.Group', verbose_name='Førstevalg'),
+            model_name="application",
+            name="first_group",
+            field=models.ForeignKey(
+                blank=True,
+                default="",
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                related_name="applications_first",
+                to="groups.Group",
+                verbose_name="Førstevalg",
+            ),
         ),
         migrations.AlterField(
-            model_name='application',
-            name='second_group',
-            field=models.ForeignKey(blank=True, default='', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='applications_second', to='groups.Group', verbose_name='Andrevalg'),
+            model_name="application",
+            name="second_group",
+            field=models.ForeignKey(
+                blank=True,
+                default="",
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                related_name="applications_second",
+                to="groups.Group",
+                verbose_name="Andrevalg",
+            ),
         ),
         migrations.AlterField(
-            model_name='application',
-            name='third_group',
-            field=models.ForeignKey(blank=True, default='', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='applications_third', to='groups.Group', verbose_name='Tredjevalg'),
+            model_name="application",
+            name="third_group",
+            field=models.ForeignKey(
+                blank=True,
+                default="",
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                related_name="applications_third",
+                to="groups.Group",
+                verbose_name="Tredjevalg",
+            ),
         ),
     ]

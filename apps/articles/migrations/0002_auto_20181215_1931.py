@@ -6,13 +6,16 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('articles', '0001_initial'),
+        ("articles", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='article',
-            name='image',
-            field=models.ImageField(help_text='To crop the image, simply click save and continue.', upload_to='articles/%Y/'),
+            model_name="article",
+            name="image",
+            field=models.ImageField(
+                help_text="To crop the image, simply click save and continue.",
+                upload_to="articles/%Y/",
+            ),
         ),
     ]

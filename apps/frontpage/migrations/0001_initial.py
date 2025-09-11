@@ -8,19 +8,58 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='CarouselItem',
+            name="CarouselItem",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=200)),
-                ('image', models.ImageField(help_text='To crop the image, simply click save and continue.', upload_to='carousel/')),
-                ('desktop_crop', image_cropping.fields.ImageRatioField('image', '2000x300', adapt_rotation=False, allow_fullsize=False, free_crop=False, help_text=None, hide_image_field=False, size_warning=True, verbose_name='desktop crop')),
-                ('mobile_crop', image_cropping.fields.ImageRatioField('image', '600x600', adapt_rotation=False, allow_fullsize=False, free_crop=False, help_text=None, hide_image_field=False, size_warning=True, verbose_name='mobile crop')),
-                ('link', models.URLField(blank=True, max_length=300)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=200)),
+                (
+                    "image",
+                    models.ImageField(
+                        help_text="To crop the image, simply click save and continue.",
+                        upload_to="carousel/",
+                    ),
+                ),
+                (
+                    "desktop_crop",
+                    image_cropping.fields.ImageRatioField(
+                        "image",
+                        "2000x300",
+                        adapt_rotation=False,
+                        allow_fullsize=False,
+                        free_crop=False,
+                        help_text=None,
+                        hide_image_field=False,
+                        size_warning=True,
+                        verbose_name="desktop crop",
+                    ),
+                ),
+                (
+                    "mobile_crop",
+                    image_cropping.fields.ImageRatioField(
+                        "image",
+                        "600x600",
+                        adapt_rotation=False,
+                        allow_fullsize=False,
+                        free_crop=False,
+                        help_text=None,
+                        hide_image_field=False,
+                        size_warning=True,
+                        verbose_name="mobile crop",
+                    ),
+                ),
+                ("link", models.URLField(blank=True, max_length=300)),
             ],
         ),
     ]

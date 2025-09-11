@@ -8,17 +8,29 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Group',
+            name="Group",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100)),
-                ('published', models.BooleanField(default=False, help_text='Set this to make group public.')),
-                ('content', ckeditor_uploader.fields.RichTextUploadingField()),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=100)),
+                (
+                    "published",
+                    models.BooleanField(
+                        default=False, help_text="Set this to make group public."
+                    ),
+                ),
+                ("content", ckeditor_uploader.fields.RichTextUploadingField()),
             ],
         ),
     ]

@@ -22,5 +22,4 @@ sorl-thumbnail = "==12.10.0"
 python_version = "3.9.0"
 
 [scripts]
-production = "gunicorn --config /etc/websites/nablarevyen/gunicorn.conf nablarevy
-en.wsgi:application"
+production = "gunicorn --config /etc/websites/nablarevyen/gunicorn.conf nablarevyen.wsgi:application"

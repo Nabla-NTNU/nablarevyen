@@ -6,12 +6,15 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('groups', '0001_initial'),
+        ("groups", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='group',
-            options={'verbose_name': 'Undergruppe', 'verbose_name_plural': 'Undergrupper'},
+            name="group",
+            options={
+                "verbose_name": "Undergruppe",
+                "verbose_name_plural": "Undergrupper",
+            },
         ),
     ]

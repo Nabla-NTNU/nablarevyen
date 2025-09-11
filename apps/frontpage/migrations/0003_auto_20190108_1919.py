@@ -7,18 +7,38 @@ import image_cropping.fields
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('frontpage', '0002_carouselitem_published'),
+        ("frontpage", "0002_carouselitem_published"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='carouselitem',
-            name='desktop_crop',
-            field=image_cropping.fields.ImageRatioField('image', '2000x500', adapt_rotation=False, allow_fullsize=False, free_crop=False, help_text=None, hide_image_field=False, size_warning=True, verbose_name='desktop crop'),
+            model_name="carouselitem",
+            name="desktop_crop",
+            field=image_cropping.fields.ImageRatioField(
+                "image",
+                "2000x500",
+                adapt_rotation=False,
+                allow_fullsize=False,
+                free_crop=False,
+                help_text=None,
+                hide_image_field=False,
+                size_warning=True,
+                verbose_name="desktop crop",
+            ),
         ),
         migrations.AlterField(
-            model_name='carouselitem',
-            name='mobile_crop',
-            field=image_cropping.fields.ImageRatioField('image', '600x500', adapt_rotation=False, allow_fullsize=False, free_crop=False, help_text=None, hide_image_field=False, size_warning=True, verbose_name='mobile crop'),
+            model_name="carouselitem",
+            name="mobile_crop",
+            field=image_cropping.fields.ImageRatioField(
+                "image",
+                "600x500",
+                adapt_rotation=False,
+                allow_fullsize=False,
+                free_crop=False,
+                help_text=None,
+                hide_image_field=False,
+                size_warning=True,
+                verbose_name="mobile crop",
+            ),
         ),
     ]

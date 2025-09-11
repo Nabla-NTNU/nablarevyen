@@ -1,0 +1,13 @@
+[Unit]
+Description=nablaweb daemon
+After=network.target
+
+[Service]
+User=nablarevyen
+Group=webapps
+WorkingDirectory=/srv/nablarevyen
+ExecStart=/var/websites/nablarevyen/.local/bin/pipenv run production
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

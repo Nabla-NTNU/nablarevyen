@@ -1,3 +1,9 @@
+# secrets are stored here
+.env
+
+# Local pyenv version file
+.python-version
+
 # Bytecode
 *.pyc
 

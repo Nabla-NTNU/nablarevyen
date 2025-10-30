@@ -22,9 +22,6 @@ VARIABLE_CONTENT = os.environ.get("VARIABLE_CONTENT", os.path.join(BASE_DIR, "va
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "ai7z9^b14!l8z^4r9x+v#=$cgv=2hqx1n9w^_^wkne+n7(5(@p"
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 

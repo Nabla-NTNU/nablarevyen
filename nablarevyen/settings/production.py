@@ -13,6 +13,9 @@ ALLOWED_HOSTS = ["revy.nabla.no"]
 
 ADMINS = [("WebSjef", "websjef@nabla.ntnu.no")]
 
+SECRET_KEY = env.get("SECRET_KEY")
+FALLBACK_KEYS = [env.get("FALLBACK_KEY", "")]
+
 MANAGERS = ADMINS
 
 DATABASES = {

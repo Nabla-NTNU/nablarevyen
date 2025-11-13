@@ -198,3 +198,20 @@ THUMBNAIL_QUALITY = 95
 IMAGE_CROPPING_THUMB_SIZE = (200, 200)
 
 IMAGE_CROPPING_SIZE_WARNING = True
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {"timestamp": {"format": "%(asctime)s %(message)s"}},
+    "handlers": {
+        "file": {
+            "level": "ERROR",
+            "class": "logging.FileHandler",
+            "filename": os.environ.get(
+                "DJANGO_LOG_PATH", "/var/log/django/nablarevyen/error.log"
+            ),
+            "formatter": "timestamp",
+        },
+    },
+    "loggers": {"django": {"handlers": ["file"], "level": "ERROR", "propagate": True}},
+}

@@ -9,7 +9,7 @@ from .base import *
 pymysql.install_as_MySQLdb()
 
 DEBUG = bool(env.get("DEBUG", False))
-ALLOWED_HOSTS = ["revy.nabla.no", "www.revy.nabla.no"]
+ALLOWED_HOSTS = ["revy.nabla.no"]
 
 ADMINS = [("WebSjef", "websjef@nabla.no")]
 

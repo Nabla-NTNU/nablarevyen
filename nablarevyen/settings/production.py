@@ -11,7 +11,7 @@ pymysql.install_as_MySQLdb()
 DEBUG = bool(env.get("DEBUG", False))
 ALLOWED_HOSTS = ["revy.nabla.no", "www.revy.nabla.no"]
 
-ADMINS = [("WebSjef", "websjef@nabla.ntnu.no")]
+ADMINS = [("WebSjef", "websjef@nabla.no")]
 
 SECRET_KEY = env.get("SECRET_KEY")
 FALLBACK_KEYS = [env.get("FALLBACK_KEY", "")]
